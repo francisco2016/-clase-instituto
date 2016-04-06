@@ -40,5 +40,34 @@ public class Alumno
         notas[notas2.length] = nota;
     }
 
-    
+    /**
+     * método que permita conocer la nota media (en decimal) del alumno en este momento
+     */
+    public float notaMedia(){
+        float sumaNotas = 0;
+        for(int i = 0; i < notas.length; i ++){
+            sumaNotas+= notas[i];
+        }
+        return sumaNotas/notas.length;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
