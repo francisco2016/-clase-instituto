@@ -1,5 +1,5 @@
 
- /**
+/**
  * Cada alumno se caracteriza por un nombre, una edad, su número de clase (que empieza en 1 para el primer alumno y que debe
  * generarse automáticamente, es decir, no se pasa como parámetro al constructor). Esta clase alumno debe contar con 4 métodos:
  * 1.   Un método que permita introducir una nota entera del alumno. Este método se peude invocar tantas veces como deseemos.
@@ -13,8 +13,8 @@ public class Alumno
     // instance variables - replace the example below with your own
     private String nombre;
     private int edad;
-    private int numClase;
-    public static final int nota  = 1;
+    //private int numClase;
+    public static int numClase  = 0;
     private int[] notas;
 
     /**
@@ -24,7 +24,7 @@ public class Alumno
     {
         this.nombre = nombre;
         this.edad = edad;
-        numClase++;
+        numClase ++;
         notas = new int[0];
     }
 
@@ -32,6 +32,13 @@ public class Alumno
      * para introducir las notas del alummno.
      */
     public void addNota(int nota){
+//         int notasBis[] = new int [notas.length+1];
+//         for (int index = 0 ; index <notas.length; index++)
+//         {
+//             notasBis[index] = notas[index];
+//         }
+//         notasBis[notasBis.length-1]=nota;
+//         notas = notasBis;
         int[] notas2 = notas;
         notas = new int[notas2.length + 1];
         for(int i = 0; i < notas2.length; i ++){
@@ -50,7 +57,7 @@ public class Alumno
         }
         return sumaNotas/notas.length;
     }
-    
+
     /**
      * método que indique si el alumno esta aprobado o no en función de su nota media actual.
      */
@@ -60,17 +67,31 @@ public class Alumno
         }
         else{System.out.println(" SUSPENSO !!!!");}
     }
+
+    /**
+     * muestre todos los datos del alumno
+     */
+    public void muestraDatosAlumno(){
+        System.out.println(" ");
+        System.out.println("nombe: " +nombre);
+        System.out.println("edad " +edad);
+        System.out.println("numero de clase " +numClase);
+        System.out.println("");
+        System.out.println("================ notas ================");
+        System.out.println("");
+        for(int i = 0; i < notas.length; i ++){
+            System.out.println("Nota " +(i + 1)+ ": " +notas[i]);
+        }
+ 
+        System.out.println("nota media "  +notaMedia());
+        System.out.println("esta o no aprobado");
+        if(notaMedia() >= 5){
+            System.out.println(" APROBADO ¡¡¡¡");
+        }
+        else{System.out.println(" SUSPENSO !!!!");}
+        System.out.println("");
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
