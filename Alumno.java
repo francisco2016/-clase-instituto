@@ -50,6 +50,16 @@ public class Alumno
         }
         return sumaNotas/notas.length;
     }
+    
+    /**
+     * método que indique si el alumno esta aprobado o no en función de su nota media actual.
+     */
+    public void haAprobado(){
+        if(notaMedia() >= 5){
+            System.out.println(" APROBADO ¡¡¡¡");
+        }
+        else{System.out.println(" SUSPENSO !!!!");}
+    }
 }
 
 
