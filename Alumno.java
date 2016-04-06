@@ -28,6 +28,17 @@ public class Alumno
         notas = new int[0];
     }
 
+    /**
+     * para introducir las notas del alummno.
+     */
+    public void addNota(int nota){
+        int[] notas2 = notas;
+        notas = new int[notas2.length + 1];
+        for(int i = 0; i < notas2.length; i ++){
+            notas[i] = notas2[i];
+        }
+        notas[notas2.length] = nota;
+    }
 
     
 }
